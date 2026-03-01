@@ -1,66 +1,90 @@
-# Detector-B-sico-de-Tapabocas-con-OpenCV
-Este proyecto implementa un sistema básico de detección de tapabocas 
+##Contador-de-Personas-con-OpenCV
+
+Este proyecto implementa un sistema básico de conteo de personas
 utilizando visión por computador con OpenCV en Python.
 
-El sistema analiza el rostro detectado por la cámara web y determina 
-si existe una posible obstrucción en la zona de nariz y boca, basándose 
-en detección facial y análisis de color.
+El sistema detecta rostros mediante la cámara web y realiza el conteo
+en tiempo real, utilizando clasificadores Haar Cascade para detección
+frontal y de perfil (derecho e izquierdo).
 
-## Tecnologías utilizadas
+Tecnologías utilizadas
 
-- Python 3.x
-- OpenCV
-- NumPy
-- Tkinter
-- Haar Cascades (detección facial)
+Python 3.x
 
-## Requisitos
+OpenCV
 
-- Python 3.9 o superior
-- Cámara web funcional
+NumPy
 
-## Instalación
+Tkinter
 
-1. Clonar el repositorio:
+Haar Cascades (detección facial frontal y perfil)
 
-git clone https://github.com/portadordelaluz/Detector-B-sico-de-Tapabocas-con-OpenCV
+##Requisitos
 
-2. Entrar a la carpeta del proyecto:
+Python 3.9 o superior
 
-cd turepositorio
+Cámara web funcional
 
-3. Crear entorno virtual (opcional pero recomendado):
+Windows 10 o superior (para el ejecutable)
+
+##Instalación
+
+Clonar el repositorio:
+
+git clone https://github.com/portadordelaluz/Contador-de-personas.git
+
+Entrar a la carpeta del proyecto:
+
+cd Contador-de-Personas-con-OpenCV
+
+Crear entorno virtual (opcional pero recomendado):
 
 python -m venv venv
 venv\Scripts\activate
 
-4. Instalar dependencias:
+Instalar dependencias:
 
 pip install -r requirements.txt
 
-## Ejecución
+##Ejecución
 
 Para ejecutar el programa:
 
-python main.py
+python app.py
 
-## Funcionamiento
+##Funcionamiento
 
-- Al ejecutar el programa, se abrirá una ventana con la cámara activa.
-- Si se detecta un rostro:
-  - Si se identifican nariz y boca → se muestra "Sin tapabocas".
-  - Si no se detectan → se muestra "Posible tapabocas".
-- El botón "Salir" cierra completamente el programa.
- 
-## Limitaciones
+Al ejecutar el programa, se abrirá una ventana con la cámara activa.
 
-- La detección funciona mejor con el rostro de frente.
-- Puede presentar falsos positivos con iluminación baja.
-- No utiliza modelos de deep learning, sino clasificadores Haar.
+El sistema detecta:
 
-## Autor
+Rostro frontal.
 
-Keiler Ferrer Hurtado 
+Perfil derecho.
+
+Perfil izquierdo (mediante inversión horizontal).
+
+Se eliminan detecciones duplicadas para evitar contar la misma persona más de una vez.
+
+Se optimiza el rendimiento reduciendo la resolución del frame.
+
+El conteo total de personas detectadas se muestra en tiempo real.
+
+El botón "Salir" cierra completamente el programa.
+
+##Limitaciones
+
+La detección funciona mejor con buena iluminación.
+
+Puede presentar fallos si el rostro está parcialmente cubierto.
+
+No utiliza modelos de deep learning, sino clasificadores Haar.
+
+La precisión puede variar según el ángulo del rostro.
+
+##Autor
+
+Keiler Ferrer Hurtado
 20251020104
-Ingeniería de sistemas
+Ingeniería de Sistemas
 Universidad Distrital
