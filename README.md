@@ -1,4 +1,4 @@
-  ##Contador-de-Personas-con-OpenCV
+  Contador-de-Personas-con-OpenCV
 
 Este proyecto implementa un sistema básico de conteo de personas
 utilizando visión por computador con OpenCV en Python.
